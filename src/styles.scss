@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --color1: #176087;
+    --color2: #132E32;
+    --color3: #1D84B5;
+    --color4: #53A2BE;
+    --color5: #0A2239;
+
+    --sun: #FFAD05;
+    --rain: #044389;
+    --cloud: #7CAFC4;
+
+    --header-height: 60px;
+    --footer-height: 50px;
+
+    --input-height: 70px;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
