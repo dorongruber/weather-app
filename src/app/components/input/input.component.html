@@ -1,0 +1,13 @@
+<div [formGroup]="form" class="input-container">
+    <div class="form__group">
+        <input 
+        [id]="name"
+        [type]="type" class="form__field"
+        [placeholder]="placeholder" 
+        [name]="name"
+        [formControlName]="name"
+        [autocomplete]="autocomplete"/>
+        <label [for]="name" class="form__label">{{ label }}</label>
+        
+    </div>
+</div>

@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+section {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+button {
+    width: fit-content;
+    padding: 7px;
+    box-sizing: border-box;
+}

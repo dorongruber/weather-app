@@ -1,0 +1,8 @@
+section {
+    width: 100%;
+    height: calc(100vh - (var(--header-height) + var(--footer-height)));
+    background-color: var(--color3);
+    // background-image: var(--background-image1);
+    background-position: center;
+    background-size: cover;
+}

@@ -1,0 +1,14 @@
+section {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 20px;
+    padding-inline: 25px;
+    box-sizing: border-box;
+    gap: 25px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

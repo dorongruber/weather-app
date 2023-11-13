@@ -1,16 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { NgOptimizedImage } from '@angular/common'
 import { AppComponent } from './app.component';
+import { WeatherComponent } from './components/weather/weather.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormComponent } from './components/form/form.component';
+import { InputComponent } from './components/input/input.component';
+import { MainComponent } from './views/main/main.component';
+import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherComponent,
+    HeaderComponent,
+    FooterComponent,
+    FormComponent,
+    InputComponent,
+    MainComponent,
+    WeatherCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

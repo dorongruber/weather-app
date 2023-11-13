@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: var(--header-height);
+    color: var(--color1);
+    background-color: var(--color4);
+}
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 5px;
+}

@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <section>
+        <app-input [form]="form" [name]="'timeZone'" [label]="'Time Zone'" [placeholder]="'timeZone'"></app-input>
+        <app-input [form]="form" [name]="'start'" [label]="'Start Date'" [type]="'date'" [placeholder]="'Enter Start Date'"></app-input>
+        <app-input [form]="form" [name]="'end'" [label]="'End Date'" [type]="'date'" [placeholder]="'Enter End Date'"></app-input>
+    </section>
+
+    <button type="submit"> Get Weather</button>
+</form>
