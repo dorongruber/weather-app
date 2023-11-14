@@ -8,8 +8,8 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent  {
-
-  weatherData: DailyWeather[] = [];
+  empty: DailyWeather = new DailyWeather(undefined,undefined,undefined,undefined,undefined,undefined,undefined);
+  weatherData: DailyWeather[] = [this.empty, this.empty, this.empty, this.empty, this.empty, this.empty, this.empty];
   params: any = {};
   temperatureUnit: string = "c";
   constructor(private weatherService: WeatherService) {

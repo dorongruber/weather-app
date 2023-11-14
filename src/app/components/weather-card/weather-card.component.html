@@ -1,17 +1,26 @@
 <section class="card-container">
     <div>
-        <h2 [ngClass]="{'skeleton skeleton-text': !dailyWeather}">{{ dailyWeather?.time  | date:"dd/M EEE"}}</h2>
-        <img width="100" height="100" [ngClass]="{'skeleton': !iconPath}" [ngSrc]="iconPath!" [alt]="generalWeatherDescription" priority>
-        
-        <p [ngClass]="{'skeleton skeleton-text': !generalWeatherDescription}">{{ generalWeatherDescription }}</p>
+        <h2 
+        [ngClass]="{'skeleton': !dailyWeather.time, 'skeleton-h2': !dailyWeather.time}">
+            {{ dailyWeather.time  | date:"dd/M EEE"}}
+        </h2>
+
+        <img 
+        [ngClass]="{'skeleton': iconPath.includes('empty'), 'skeleton-img': iconPath.includes('empty')}" 
+        width="100" height="100" [ngSrc]="iconPath" [alt]="generalWeatherDescription" priority>
+
+        <p 
+        [ngClass]="{'skeleton': !generalWeatherDescription, 'skeleton-p': !generalWeatherDescription}">
+            {{ generalWeatherDescription }}
+        </p>
     </div>
     <hgroup>
-        <h3 [ngClass]="{'skeleton skeleton-body': !dailyWeather}">air temperature</h3>
-        <app-max-min [max]="dailyWeather?.temperature2mMax" [min]="dailyWeather?.temperature2mMin" [unit]="temperatureUnit"></app-max-min>
+        <h3>air temperature</h3>
+        <app-max-min [max]="dailyWeather.temperature2mMax" [min]="dailyWeather.temperature2mMin" [unit]="temperatureUnit"></app-max-min>
     </hgroup>
     <hgroup>
-        <h3 [ngClass]="{'skeleton skeleton-body': !dailyWeather}">temperature</h3>
-        <app-max-min [max]="dailyWeather?.apparentTemperatureMax" [min]="dailyWeather?.apparentTemperatureMin" [unit]="temperatureUnit"></app-max-min>
+        <h3>temperature</h3>
+        <app-max-min [max]="dailyWeather.apparentTemperatureMax" [min]="dailyWeather.apparentTemperatureMin" [unit]="temperatureUnit"></app-max-min>
 
     </hgroup>
     

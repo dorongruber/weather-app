@@ -1,9 +1,9 @@
-<div class="min_max_container" [ngClass]="{'skeleton skeleton-body': !max && !min && unit}">
-    <div class="">
-        <span class="temperature ">{{ max | number:'2.0-1' }} </span> <div class="circle"></div><span class="unit">{{ unit }}</span>
+<div class="min_max_container" >
+    <div [ngClass]="{'skeleton': !max , 'skeleton-div': !max }">
+        <span  class="temperature ">{{ max | number:'2.0-1' }} </span> <div [ngClass]="{'hide': !max}" class="circle"></div><span [ngClass]="{'hide': !max}" class="unit">{{ unit }}</span>
     </div>
      - 
-    <div>
-        <span class="temperature ">{{ min | number:'2.0-1' }} </span> <div class="circle"></div><span class="unit">{{ unit }}</span>
+    <div [ngClass]="{'skeleton': !min, 'skeleton-div': !min}">
+        <span class="temperature ">{{ min | number:'2.0-1' }} </span> <div [ngClass]="{'hide': !min}" class="circle"></div><span [ngClass]="{'hide': !min}" class="unit">{{ unit }}</span>
     </div>
 </div>

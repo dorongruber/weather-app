@@ -1,19 +1,19 @@
 export class DailyWeather {
-    time: Date;
-    weatherCode: number;
-    temperature2mMax: number;
-    temperature2mMin: number;
-    apparentTemperatureMax: number;
-    apparentTemperatureMin: number;
-    precipitationSum: number;
+    time?: Date;
+    weatherCode?: number;
+    temperature2mMax?: number;
+    temperature2mMin?: number;
+    apparentTemperatureMax?: number;
+    apparentTemperatureMin?: number;
+    precipitationSum?: number;
     constructor(
-        time: Date,
-        weatherCode: number,
-        temperature2mMax: number,
-        temperature2mMin: number,
-        apparentTemperatureMax: number,
-        apparentTemperatureMin: number,
-        precipitationSum: number,
+        time?: Date,
+        weatherCode?: number,
+        temperature2mMax?: number,
+        temperature2mMin?: number,
+        apparentTemperatureMax?: number,
+        apparentTemperatureMin?: number,
+        precipitationSum?: number,
     ) {
         this.time = time;
         this.weatherCode = weatherCode;

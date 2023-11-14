@@ -28,3 +28,5 @@ export const WeatherIcons: {[key: number]: string} = {
     96: "assets/weather-icons/dovora/snow_thunder.svg", 
     99:	"assets/weather-icons/dovora/tornado.svg", 
 }
+
+export const emptySVG: string = "/assets/weather-icons/empty.svg";

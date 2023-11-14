@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { weatherCodes } from 'src/app/consts/WMO-weather-interpretation-codes';
-import { WeatherIcons } from 'src/app/consts/weather-icons';
+import { WeatherIcons, emptySVG } from 'src/app/consts/weather-icons';
 import { DailyWeather } from 'src/app/models/daily-weather';
 
 @Component({
@@ -9,13 +9,12 @@ import { DailyWeather } from 'src/app/models/daily-weather';
   styleUrls: ['./weather-card.component.scss', '../../styles/skeleton.component.scss']
 })
 export class WeatherCardComponent implements OnChanges {
-  @Input() dailyWeather?: DailyWeather;
+  @Input() dailyWeather!: DailyWeather;
   @Input() temperatureUnit!: string;
   generalWeatherDescription?: string;
-  baseIconPath: string = "assets/weather-icons/dovora/";
-  iconPath?: string;
+  iconPath: string = emptySVG;
   ngOnChanges(changes: SimpleChanges): void {
-    this.generalWeatherDescription = weatherCodes[this.dailyWeather!.weatherCode];
-    this.iconPath = WeatherIcons[this.dailyWeather!.weatherCode];
+    this.generalWeatherDescription = this.dailyWeather ? weatherCodes[this.dailyWeather.weatherCode!] : undefined;
+    this.iconPath = this.dailyWeather.weatherCode ? WeatherIcons[this.dailyWeather.weatherCode!] : emptySVG;
   }
 }
