@@ -1,0 +1,27 @@
+.min_max_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    gap: 3px;
+    color: var(--color2);
+    font-family: 'EduTASBeginner-Regular';
+}
+
+div {
+    display: flex;
+    gap: 3px;
+}
+
+.circle {
+    height: 8px;
+    width: 8px;
+    border: 2px solid var(--color2);
+    border-radius: 50%;
+}
+.unit {
+    padding-inline-start: 3px;
+    font-size: 17px;
+    align-self: flex-end;
+    color: #FFAD05;
+}

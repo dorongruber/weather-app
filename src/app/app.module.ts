@@ -11,6 +11,7 @@ import { FormComponent } from './components/form/form.component';
 import { InputComponent } from './components/input/input.component';
 import { MainComponent } from './views/main/main.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import { MaxMinComponent } from './components/max-min/max-min.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WeatherCardComponent } from './components/weather-card/weather-card.com
     FormComponent,
     InputComponent,
     MainComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    MaxMinComponent
   ],
   imports: [
     BrowserModule,
