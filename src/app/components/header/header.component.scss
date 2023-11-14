@@ -1,12 +1,14 @@
 header {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     height: var(--header-height);
-    color: var(--color1);
-    background-color: var(--color4);
+    background-color: var(--color1);
+    padding-inline: 25px;
 }
 h1 {
+    font-family: 'EduTASBeginner-Bold';
+    color: var(--color5);
     margin-block-start: 0;
     margin-block-end: 5px;
 }

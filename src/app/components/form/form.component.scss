@@ -1,18 +1,63 @@
 form {
+    height: var(--form-height);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 35px;
+    align-items: flex-end;
+    margin-inline: 25px;
 }
 
-section {
+div {
     display: flex;
-    gap: 35px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    height: fit-content;
 }
-button {
-    width: fit-content;
-    padding: 7px;
-    box-sizing: border-box;
+
+fieldset {
+    padding: 20px;
+    border-color: var(--color1);
+    border-radius: var(--border-radius);
+    font-family: 'EduTASBeginner-Regular';
+}
+
+legend {
+    color: var(--color5);
+}
+
+span {
+    background-color: transparent;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    border: 1px solid var(--color1);
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+        color: var(--color2);
+        background-color: var(--color5);
+    }
+}
+
+label {
+    position: relative;
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    &:hover + span,
+    &:checked + span,
+    &:focus + span {
+        color: var(--color2);
+        background-color: var(--color5);
+    }
 }

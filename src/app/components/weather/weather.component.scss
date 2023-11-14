@@ -1,12 +1,21 @@
 section {
     display: flex;
     justify-content: space-between;
-    padding-block-start: 20px;
-    padding-inline: 25px;
-    box-sizing: border-box;
-    gap: 25px;
     width: 100%;
     overflow-x: auto;
+    height: calc(100% - (var(--header-height) + var(--footer-height)));
+    align-items: center;
+
+    @media (min-width: 640px) {
+        padding-inline: 25px;
+        gap: 10px;
+    }
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+        padding-block: 25px;
+        gap: 20px;
+    }
 }
 
 ::-webkit-scrollbar {

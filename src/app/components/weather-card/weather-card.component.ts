@@ -10,11 +10,12 @@ import { DailyWeather } from 'src/app/models/daily-weather';
 })
 export class WeatherCardComponent implements OnChanges {
   @Input() dailyWeather?: DailyWeather;
+  @Input() temperatureUnit!: string;
   generalWeatherDescription?: string;
   baseIconPath: string = "assets/weather-icons/dovora/";
   iconPath!: string;
   ngOnChanges(changes: SimpleChanges): void {
     this.generalWeatherDescription = weatherCodes[this.dailyWeather!.weatherCode];
-    this.iconPath = `${this.baseIconPath}${WeatherIcons[this.dailyWeather!.weatherCode]}`;
+    this.iconPath = WeatherIcons[this.dailyWeather!.weatherCode];
   }
 }
