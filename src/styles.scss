@@ -1,20 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --color1: #176087;
-    --color2: #132E32;
+    --color1: #7CAFC4;
+    --color2: #ffffff;
     --color3: #1D84B5;
     --color4: #53A2BE;
     --color5: #0A2239;
 
-    --sun: #FFAD05;
-    --rain: #044389;
-    --cloud: #7CAFC4;
-
     --header-height: 60px;
     --footer-height: 50px;
+    --form-height: 100px;
+
+    --border-radius: 25px;
 
     --input-height: 70px;
 
+}
+
+@font-face {
+    font-family: 'EduTASBeginner-Bold';
+    src: url('assets/fonts/Edu-TAS-Beginner/EduTASBeginner-Bold.ttf');
+}
+@font-face {
+    font-family: 'EduTASBeginner-Medium';
+    src: url('assets/fonts/Edu-TAS-Beginner/EduTASBeginner-Medium.ttf');
+}
+@font-face {
+    font-family: 'EduTASBeginner-Regular';
+    src: url('assets/fonts/Edu-TAS-Beginner/EduTASBeginner-Regular.ttf');
+}
+@font-face {
+    font-family: 'EduTASBeginner-SemiBold';
+    src: url('assets/fonts/Edu-TAS-Beginner/EduTASBeginner-SemiBold.ttf');
 }
 
 body {
@@ -23,5 +39,6 @@ body {
 }
 
 * {
+    text-transform: capitalize;
     box-sizing: border-box;
 }
