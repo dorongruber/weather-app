@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,16 +7,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
   form: FormGroup;
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      timeZone: this.fb.control('', []),
-      start: this.fb.control('', []),
-      end: this.fb.control('', []),
+      temperature: this.fb.control('celsius'),
     });
-  }
-  onSubmit(form: FormGroup) {
-    console.log("submit form ===> ", form);
-    const formParams = {};
+
+    this.form.valueChanges.subscribe(res => {
+      const params = {
+        "temperature_unit": res.temperature,
+      }
+      this.onChange.emit(params);
+    })
   }
 }
