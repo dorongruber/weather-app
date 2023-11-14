@@ -83,15 +83,6 @@ export class WeatherService {
         
     // `weatherData` now contains a simple structure with arrays for datetime and weather data
     for (let i = 0; i < weatherData.daily.time.length; i++) {
-      console.log(
-        weatherData.daily.time[i].toISOString(),
-        weatherData.daily.weatherCode[i],
-        weatherData.daily.temperature2mMax[i],
-        weatherData.daily.temperature2mMin[i],
-        weatherData.daily.apparentTemperatureMax[i],
-        weatherData.daily.apparentTemperatureMin[i],
-        weatherData.daily.precipitationSum[i]
-      );
       res.push( new DailyWeather(
         weatherData.daily.time[i],weatherData.daily.weatherCode[i],
         weatherData.daily.temperature2mMax[i],
