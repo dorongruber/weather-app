@@ -4,6 +4,39 @@ section {
     height: calc(100vh - (var(--header-height) + var(--footer-height)));
     background-image: linear-gradient(to bottom, #7CAFC4,rgb(29, 133, 181), rgba(29, 133, 181, 0.3));
 }
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - (var(--header-height) + var(--footer-height)));
+}
+
+hgroup {
+    position: relative;
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color2);
+    border-radius: var(--border-radius);
+    z-index: 10;
+
+    h2 {
+        color: var(--color2);
+    }
+
+    button {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 5px;
+        font-weight: bold;
+    }
+    @media (max-width: 640px) {
+        width: 85%;
+    }
+}
 
 .wave {
     position: absolute;

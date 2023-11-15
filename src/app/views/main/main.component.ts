@@ -12,6 +12,7 @@ export class MainComponent  {
   weatherData: DailyWeather[] = [this.empty, this.empty, this.empty, this.empty, this.empty, this.empty, this.empty];
   params: any = {};
   temperatureUnit: string = "c";
+  errorMsg?: string;
   constructor(private weatherService: WeatherService) {
     this.params = { 
       "daily": ["weather_code", "temperature_2m_max", "temperature_2m_min", "apparent_temperature_max", "apparent_temperature_min", "precipitation_sum"],
@@ -20,8 +21,29 @@ export class MainComponent  {
   }
 
   ngOnInit(): void {
-    navigator.geolocation.getCurrentPosition(this.onWeatherResponse.bind(this));
+    this.getGeolocation();
+  }
 
+  getGeolocation() {
+    this.errorMsg = undefined;
+    navigator.geolocation.getCurrentPosition(this.onWeatherResponse.bind(this), this.showError.bind(this));
+  }
+  
+  showError(error: any) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        this.errorMsg = "enable geolocation and press retry button to view weather."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        this.errorMsg = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        this.errorMsg = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        this.errorMsg = "An unknown error occurred."
+        break;
+    }
   }
 
   async onValueChanges(params: any) {
