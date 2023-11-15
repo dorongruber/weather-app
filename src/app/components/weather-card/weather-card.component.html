@@ -15,11 +15,11 @@
         </p>
     </div>
     <hgroup>
-        <h3>air temperature</h3>
+        <h3 [ngClass]="{'skeleton': !airTemperatureTitle, 'skeleton-h3': !airTemperatureTitle}">{{ airTemperatureTitle }}</h3>
         <app-max-min [max]="dailyWeather.temperature2mMax" [min]="dailyWeather.temperature2mMin" [unit]="temperatureUnit"></app-max-min>
     </hgroup>
     <hgroup>
-        <h3>temperature</h3>
+        <h3 [ngClass]="{'skeleton': !temperatureTitle, 'skeleton-h3': !temperatureTitle}">{{ temperatureTitle }}</h3>
         <app-max-min [max]="dailyWeather.apparentTemperatureMax" [min]="dailyWeather.apparentTemperatureMin" [unit]="temperatureUnit"></app-max-min>
 
     </hgroup>

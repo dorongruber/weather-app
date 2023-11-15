@@ -13,8 +13,12 @@ export class WeatherCardComponent implements OnChanges {
   @Input() temperatureUnit!: string;
   generalWeatherDescription?: string;
   iconPath: string = emptySVG;
+  airTemperatureTitle?: string;
+  temperatureTitle?: string;
   ngOnChanges(changes: SimpleChanges): void {
-    this.generalWeatherDescription = this.dailyWeather ? weatherCodes[this.dailyWeather.weatherCode!] : undefined;
+    this.generalWeatherDescription = this.dailyWeather.weatherCode ? weatherCodes[this.dailyWeather.weatherCode!] : undefined;
     this.iconPath = this.dailyWeather.weatherCode ? WeatherIcons[this.dailyWeather.weatherCode!] : emptySVG;
+    this.airTemperatureTitle = this.dailyWeather.apparentTemperatureMax ? "air temperature" : undefined;
+    this.temperatureTitle = this.dailyWeather.temperature2mMax ? "temperature" : undefined;
   }
 }
